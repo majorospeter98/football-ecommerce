@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mg-top">Your Items:</h1>
-    <section class="container" v-if="getCart.length > 0">
+    <section class="container" v-if="getCart.length > 0" >
       <ul id="cart" >
         <cartItem
           v-for="cart in getCart"
@@ -12,12 +12,11 @@
           :type="cart.type"
           :quantity="cart.quantity"
         ></cartItem>
-       
-      </ul>
+           </ul>
        <button class="button-9 mg-top" @click="addtoOrders">Order</button>
-      
+         
     </section>
-    <p v-else>Your cart is empty.</p>
+     <p v-else>Your cart is empty.</p>
   </div>
 </template>
 <script>
@@ -29,16 +28,7 @@ export default {
   components: {
     cartItem,
   },
-  data() {
-    return {
-      id: null,
-      img: null,
-      team: null,
-      type: null,
-      quantity: null,
-    };
-  },
-  computed: {
+   computed: {
     getCart() {
       const cart = useCart();
       return cart.getCart;
@@ -50,22 +40,23 @@ export default {
       const auth = useAuth();
       let checker = auth.whoisLoggedIn;
       const cart = useCart();
+      
       for (let item in cart.cart) {
-               this.id = cart.cart[item].id;
-        this.img = cart.cart[item].img;
-        this.team = cart.cart[item].team;
-        this.type = cart.cart[item].type;
-        this.quantity = cart.cart[item].quantity;
-      }
-      const orderData = {
-        id: this.id,
-        img: this.img,
-        team: this.team,
-        type: this.type,
-        quantity: this.quantity,
-        auth: checker || [],
-      };
-      order.orders.push(orderData);
+         let id = cart.cart[item].id;
+        let img = cart.cart[item].img;
+        let team = cart.cart[item].team;
+        let type = cart.cart[item].type;
+        let quantity = cart.cart[item].quantity;
+         order.orders.push({id:id,img:img,team:team,type:type,quantity:quantity,auth: checker});
+       
+          }
+              if(auth.whoisLoggedIn === null){
+                alert("Sikeres rendelés");
+              }
+              else{
+                this.$router.push("/MyOrders");
+              }
+                
       cart.cart = [];
     },
   },
@@ -80,8 +71,8 @@ p {
  display:flex;
  justify-content: center;
  flex-wrap: wrap;
- gap:1rem;
-
+ gap:1.2rem;
+text-align: center;
 }
 button {
   text-align: center;

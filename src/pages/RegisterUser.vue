@@ -132,7 +132,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .site {
   display: flex;
@@ -159,7 +158,6 @@ form {
   display: flex;
   flex-direction: column;
 }
-
 h2 {
   margin-bottom: 10px;
   text-align: center;
@@ -170,7 +168,6 @@ p {
 label {
   margin-bottom: 5px;
 }
-
 input,
 textarea {
   margin-bottom: 10px;
@@ -179,7 +176,6 @@ textarea {
   border-radius: 4px;
   width: 100%;
 }
-
 button {
   padding: 15px;
   border: none;
@@ -190,7 +186,6 @@ button {
   width: 50%;
   margin: 2rem auto;
 }
-
 .invalid label {
   color: red;
 }

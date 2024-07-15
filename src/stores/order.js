@@ -4,13 +4,11 @@ export const useOrder = defineStore({
   state: () => ({
     orders: [],
   }),
-
   getters: {
     getCart(state) {
       return state.cart;
     },
   },
-
   actions: {
     decrement() {
       this.count--;

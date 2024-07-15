@@ -40,7 +40,7 @@ export default {
         auth.isUserLoggedIn = true;
         auth.whoisLoggedIn = this.email;
         auth.changeIsUser(true);
-        alert("Succesfully loged in");
+        alert("Successfully logged in");
         this.$router.push("/store");
       } else {
         alert("Wrong email/password");
@@ -73,7 +73,6 @@ form {
   display: flex;
   flex-direction: column;
 }
-
 h2 {
   margin-bottom: 20px;
   text-align: center;

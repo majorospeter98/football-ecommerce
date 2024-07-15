@@ -36,9 +36,7 @@ export default {
 </script>
 
 <style scoped>
-#cartitem {
-  
-}
+
 .size-1 {
   height: 2rem;
   color: red;

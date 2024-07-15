@@ -51,6 +51,31 @@ export const useStores = defineStore({
         brand: "Adidas",
         img: "Real Sociedad/short.jpg",
       },
+      {
+        id: "7",
+        team: "Barcelona",
+        department: "kit",
+        type: "home",
+        brand: "Nike",
+        img: "Barcelona/home.webp",
+      },
+      {
+        id: "8",
+        team: "Barcelona",
+        department: "kit",
+        type: "away",
+        brand: "Nike",
+        img: "Barcelona/away.webp",
+      },
+      {
+        id: "9",
+        team: "Barcelona",
+        department: "short",
+        type: "home",
+        brand: "Nike",
+        img: "Barcelona/short.avif",
+      },
+      
     ],
   }),
   getters: {

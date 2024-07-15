@@ -14,23 +14,21 @@
     <p v-else class="mg-top">You don't have orders currently.</p>
   </div>
 </template>
-
 <script>
 import Orderitem from "../components/Orders/OrderItem.vue";
 import { useOrder } from "../stores/order";
 import { useAuth } from "../stores/auth";
 export default {
   components: {
-    Orderitem,
+    Orderitem
   },
   computed: {
     getOrders() {
       const order = useOrder();
-      const auth = useAuth();
+           const auth = useAuth();
       const whoOrdered = order.orders.filter(
         (order) => order.auth === auth.whoisLoggedIn
       );
-
       return whoOrdered;
     },
   },

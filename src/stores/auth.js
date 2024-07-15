@@ -1,8 +1,6 @@
 import { defineStore } from 'pinia'
-
 export const useAuth = defineStore({
     id: 'auth',
-
   state: () => ({
     isUserLoggedIn:false,
     registeredUsers: [],
@@ -10,15 +8,12 @@ export const useAuth = defineStore({
       }),
   getters: {
     getIsUser(state){
-       
-return state.isUserLoggedIn;
+       return state.isUserLoggedIn;
     },
     getCart(state){
 return state.cart;
     }
   },
-
-  // Actions: methods that can change the state
   actions: {
     changeIsUser(state){
        this.isUserLoggedIn=state

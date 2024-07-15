@@ -3,6 +3,12 @@
     <header id="header">
       <router-link to="/store">Store</router-link>
       <router-link to="/MyOrders" v-if="isLoggedin">My Orders</router-link>
+       <a v-if="isLoggedin">User: {{ getEmail }}</a>
+       <router-link :to="'/'" @click="logOut" v-if="isLoggedin"
+        >Logout</router-link
+      >
+          <router-link to="/login" v-if="!isLoggedin">Login</router-link>
+      <router-link to="/register" v-if="!isLoggedin">Register</router-link>
       <section id="svg">
         <router-link to="/cart">
           <svg
@@ -21,13 +27,9 @@
           </svg>
         </router-link>
       </section>
-      <a v-if="isLoggedin">User: {{ getEmail }}</a>
-      <router-link :to="'/'" @click="logOut" v-if="isLoggedin"
-        >Logout</router-link
-      >
-
-      <router-link to="/login" v-if="!isLoggedin">Login</router-link>
-      <router-link to="/register" v-if="!isLoggedin">Register</router-link>
+     
+      
+  
     </header>
   </div>
 </template>
@@ -75,7 +77,7 @@ export default {
   color: #fafa33;
 }
 #header {
-  height: 100px;
+  min-height: 100px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -88,5 +90,11 @@ export default {
 #svg {
   display: flex;
   margin: 3rem;
+}
+@media  (max-width:700px) {
+  #header{
+    flex-direction: column;
+    gap:1rem;
+  }
 }
 </style>
