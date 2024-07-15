@@ -27,8 +27,7 @@ export default {
   padding:0;
   box-sizing: border-box;
   scroll-behavior: smooth;
- 
-    font-family: "Atkinson Hyperlegible", sans-serif;
+  font-family: "Atkinson Hyperlegible", sans-serif;
 }
 .container{
   width:80%;
@@ -38,20 +37,18 @@ export default {
 a{
   text-decoration: none;
 }
-a:hover{
-  color:red;
+.router-link-active{
+  border:2px solid #FAFA33;
+  padding:0.5rem;
 }
 img{
   max-width: 100%;
   height:200px;
   width:220px;
 }
-.flexstore{
-display:flex;
-flex-wrap: wrap;
-}
-.mgtop{
-  margin-top:4rem;
+
+.mg-top{
+  margin-top:2rem;
 }
 /* CSS */
 .button-9 {
@@ -61,31 +58,31 @@ flex-wrap: wrap;
   border-radius: 6px;
   border-width: 0;
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-  box-sizing: border-box;
-  color: #fff;
+   color: #fff;
   cursor: pointer;
- 
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   height: 44px;
-  line-height: 1.15;
-  margin: 12px 0 0;
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ 
+
   outline: none;
   overflow: hidden;
-  padding: 0 25px;
+  
   position: relative;
   text-align: center;
   text-transform: none;
   transform: translateZ(0);
   transition: all .2s,box-shadow .08s ease-in;
-  
-  width: 100%;
+    width: 100%;
+}
+.button-9:hover{
+  background: white;
+  color:red;
+  border:1px red solid;
 }
 
-.button-9:disabled {
-  cursor: default;
-}
 
-.button-9:focus {
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
-}
+
 </style>

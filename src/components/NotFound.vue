@@ -1,13 +1,17 @@
 <template>
-  <div>Not fgounded</div>
+  <div id="notfound">Not found</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
+<style scoped>
+#notfound {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
 </style>

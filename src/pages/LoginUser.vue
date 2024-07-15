@@ -1,111 +1,103 @@
 <template>
-<div class="site">
-  <div class="form-container">
-        <form @submit.prevent="loginUser">
-            <p><router-link :to="'/register'">Register</router-link></p>
-             <h2>Login</h2>
-                <label for="email">Email:</label>
-            <input type="email" id="email" name="email" v-model="email" required>
-        
-            <label for="name">Password:</label>
-            <input type="password" id="password" name="password" v-model="password" required>
-
-         
-
-            <button  type="submit">Login</button>
-           
-        </form>
+  <div class="site">
+    <div class="form-container">
+      <form @submit.prevent="loginUser">
+        <p><router-link :to="'/register'">Register</router-link></p>
+        <h2>Login</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" v-model="email" required />
+        <label for="name">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          v-model="password"
+          required
+        />
+        <button class="button-9" type="submit">Login</button>
+      </form>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-
-import {useAuth} from "../stores/auth"
+import { useAuth } from "../stores/auth";
 export default {
-data(){
-  return{
-       email:"",
-    password: ""
-  }
-},
-methods:{
-  loginUser(){
-const auth=useAuth();
-const emailCheck=auth.registeredUsers.filter(user=>user.email=== this.email && user.password === this.password);
-console.log(emailCheck);
-if(emailCheck.length>0){
-  const auth=useAuth();
-  auth.isUserLoggedIn=true;
-auth.whoisLoggedIn=this.email
- auth.changeIsUser(true);
- alert("Sikeres bejentkezés");
- this.$router.push("/store")
-  }
-  else{
-alert("Wrong email/password");
-  }
-  }
-  
-}
-}
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    loginUser() {
+      const auth = useAuth();
+      const emailCheck = auth.registeredUsers.filter(
+        (user) => user.email === this.email && user.password === this.password
+      );
+      if (emailCheck.length > 0) {
+        const auth = useAuth();
+        auth.isUserLoggedIn = true;
+        auth.whoisLoggedIn = this.email;
+        auth.changeIsUser(true);
+        alert("Sikeres bejelentkezés");
+        this.$router.push("/store");
+      } else {
+        alert("Wrong email/password");
+      }
+    },
+  },
+};
 </script>
 <style scoped>
-.site{
-    display:flex;
+.site {
+  display: flex;
   justify-content: center;
-  background-color:#1434A4;
-  height:90vh;
+  background-color: #1434a4;
+  height: 90vh;
 }
 .form-container {
-  margin-top:5rem;
-  height:520px;
-    width: 90%;
-    max-width: 600px;
-    padding: 22px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-   
+  margin-top: 5rem;
+  height: 520px;
+  width: 90%;
+  max-width: 600px;
+  padding: 22px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
-p{
-    text-align:end
-    
-    }
+p {
+  text-align: end;
+}
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
-
 label {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
-
-input, textarea {
-    margin-bottom: 25px;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-   
+input,
+textarea {
+  margin-bottom: 25px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
 }
-
 button {
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #d4110a;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    width:50%;
-    margin: 0 auto;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d4110a;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50%;
+  margin: 0 auto;
 }
-
-
 </style>
