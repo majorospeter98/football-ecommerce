@@ -5,7 +5,6 @@
 <script>
 export default {};
 </script>
-
 <style scoped>
 #notfound {
   height: 80vh;
