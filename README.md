@@ -1,5 +1,5 @@
 # football
-Live Demo: footballvue.netlify.app/
+Live Demo: https://footballvue.netlify.app/
 ## Project setup
 ```
 npm install
