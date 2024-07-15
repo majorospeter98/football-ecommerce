@@ -3,12 +3,7 @@
     <header id="header">
     <router-link to="/store">Store</router-link>
     <router-link to="/MyOrders" v-if="isLoggedin">Rendeléseim</router-link>
-  <router-link :to="'/'" @click="logOut" v-if="isLoggedin">Logout</router-link>
-   
-    <router-link to="/login" v-if="!isLoggedin" >Login</router-link>
-    <router-link to="/register" v-if="!isLoggedin">Register</router-link>
-
-    <section id="svg">
+     <section id="svg">
 <router-link to="/cart">
 <svg width=100px height=30px  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-1">
 
@@ -19,6 +14,13 @@
         </svg>
 </router-link>
   </section>
+       <a v-if="isLoggedin">User: {{getEmail}}</a>
+  <router-link :to="'/'" @click="logOut" v-if="isLoggedin">Logout</router-link>
+
+    <router-link to="/login" v-if="!isLoggedin" >Login</router-link>
+    <router-link to="/register" v-if="!isLoggedin">Register</router-link>
+
+   
 </header>
 
   </div>
@@ -41,7 +43,13 @@ isLoggedin() {
       console.log(isUserLogged);
       return isUserLogged
     },
-   
+   getEmail(){
+     const auth=useAuth()
+      
+      const whoisLoggedIn= auth.whoisLoggedIn;
+      console.whoisLoggedIn;
+      return whoisLoggedIn;
+   }
    
   },
   methods:{
@@ -82,7 +90,7 @@ console.log("xd")
  background-color: #1434A4;
  padding:0.5rem;
 }
-header a{
+#header a{
    color:#FAFA33;
   
 }

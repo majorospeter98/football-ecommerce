@@ -12,7 +12,7 @@
 
          
 
-            <button type="submit">Login</button>
+            <button  type="submit">Login</button>
            
         </form>
     </div>
@@ -25,41 +25,34 @@ import {useAuth} from "../stores/auth"
 export default {
 data(){
   return{
-   
-    email:"",
+       email:"",
     password: ""
-
   }
 },
 methods:{
   loginUser(){
 const auth=useAuth();
-
 const emailCheck=auth.registeredUsers.filter(user=>user.email=== this.email && user.password === this.password);
 console.log(emailCheck);
-
-
-
 if(emailCheck.length>0){
   const auth=useAuth();
   auth.isUserLoggedIn=true;
 auth.whoisLoggedIn=this.email
-  console.log(auth.whoisLoggedIn);
  auth.changeIsUser(true);
- console.log(auth.isUserLoggedIn)
- return
-}
-
+ alert("Sikeres bejentkezés");
+ this.$router.push("/store")
   }
+  else{
+alert("Wrong email/password");
+  }
+  }
+  
 }
 }
 </script>
-
 <style scoped>
 .site{
-  
-  
-  display:flex;
+    display:flex;
   justify-content: center;
   background-color:#1434A4;
   height:90vh;
@@ -106,7 +99,7 @@ button {
     padding: 15px;
     border: none;
     border-radius: 4px;
-    background-color: #5cb85c;
+    background-color: #d4110a;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -114,7 +107,5 @@ button {
     margin: 0 auto;
 }
 
-button:hover {
-    background-color: #4cae4c;
-}
+
 </style>

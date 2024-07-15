@@ -2,21 +2,31 @@
 <div class="site">
   <div class="form-container">
         <form @submit.prevent="submitForm">
-            <p><router-link :to="'/login'">Login</router-link></p>
-             <h2>Register</h2>
-              <label for="email">Email:</label>
-            <input type="email" id="email" name="email" v-model="email" required>
-            <label for="userName">userName:</label>
-            <input type="text" id="userName" name="userName" v-model="userName" required>
-            <p>Invalid</p>
-            <label for="name">Password:</label>
-            <input type="password" id="name" name="name" v-model="password" required>
-           
-            <label for="passwordconf">Password: Confirm</label>
-            <input type="passwordconf" id="passworconf" name="passwordconf" v-model="confirm" required>
-        
 
-            <button type="submit">Login</button>
+            <p class="login"><router-link :to="'/login'">Login</router-link></p>
+             <h2>Register</h2>
+             <div :class="{invalid: !email.isEmailIsValid }">
+              <label for="email">Email:</label>
+            <input type="email" id="email" name="email" v-model="email.val" required>
+            <p v-if="!email.isEmailIsValid">Your email is not long enough.</p>
+             </div>
+             <div :class="{invalid: !userName.isUserNameIsValid }">
+            <label for="userName">UserName:</label>
+            <input type="text" id="userName" name="userName" v-model="userName.val" required>
+              <p v-if="!userName.isUserNameIsValid">Your username is not long enough.</p>
+             </div>
+         
+         <div :class="{invalid: !password.isPasswordIsValid}">
+            <label for="name">Password:</label>
+            <input type="password" id="name" name="name" v-model="password.val" required>
+            <p v-if="!password.isPasswordIsValid">Your password is not long enough..</p>
+         </div>
+         <div :class="{invalid:!confirm.isPasswordIsConfirm}">
+            <label for="passwordconf">Password: Confirm</label>
+            <input type="type" id="passworconf" name="passwordconf" v-model="confirm.val" required>
+         <p v-if="!confirm.isPasswordIsConfirm">Your passwords doesnt match..</p>
+         </div>
+            <button type="submit">Register</button>
            
         </form>
     </div>
@@ -29,25 +39,83 @@ import {useAuth} from "../stores/auth"
 export default {
 data(){
   return{
-email: '',
-userName: '',
-password: '',
-confirm: '',
+email: {
+  val:'',
+  isEmailIsValid:true,
+  formIsValid:true
+},
+userName: {
+  val:'',
+   isUserNameIsValid:true,
+   formIsValid:true
+},
+password: {
+  val: '',
+  isPasswordIsValid:true,
+  formIsValid:true
+},
+confirm: {
+  val:'',
+  isPasswordIsConfirm: true,
+  formIsValid:true
+},
+formIsValid:false
 
-  }
+}
+
+  
 
 },
 methods:{
+  validateForm(){
+    this.formIsValid=true;
+   
+if(this.email.val === ''  || this.email.val.length<8){
+  console.log(" nem jó")
+  this.email.isEmailIsValid=false;
+  this.formIsValid=false;
+}
+if(this.userName.val === ''  || this.userName.val.length<8){
+  console.log(" nem jó")
+  this.userName.isUserNameIsValid=false
+  this.formIsValid=false;
+}
+if(this.password.val === ''  || this.password.val.length<8){
+  console.log(" nem jó")
+  this.password.isPasswordIsValid=false
+  this.formIsValid=false;
+}
+if(this.password.val !== this.confirm.val){
+  console.log(" nem egyzeik")
+  this.confirm.isPasswordIsConfirm=false
+  this.formIsValid=false;
+}
+
+  },
   submitForm(){
+
+  this.validateForm();
+   if(!this.formIsValid){
+      return
+      }
 const auth=useAuth();
+let emailIsExist=auth.registeredUsers.filter(registeredEmail=> registeredEmail.email === this.email.val)
+console.log(emailIsExist);
 const registeredUser={
-  email:this.email,
-  userName:this.userName,
-  password:this.password,
+  email:this.email.val,
+  userName:this.userName.val,
+  password:this.password.val,
   
 }
+if(emailIsExist.length>0){
+  alert("Már regisztráltak ezzel az email címmel");
+}
+else{
 auth.registeredUsers.push(registeredUser);
-console.log(auth.registeredUsers)
+this.$router.push("/login")
+}
+
+
   }
 }
 
@@ -61,12 +129,14 @@ console.log(auth.registeredUsers)
   display:flex;
   justify-content: center;
   background-color:#1434A4;
-  height:90vh;
+  min-height: 900px;
+ 
 }
 .form-container {
-  margin-top:5rem;
-  margin-bottom:5rem;
-  min-height:620px;
+  margin-top:2rem;
+ margin-top:2rem;
+  height:100%;
+  min-height:700px;
     width: 90%;
     max-width: 600px;
     padding: 22px;
@@ -75,7 +145,7 @@ console.log(auth.registeredUsers)
     border-radius: 12px;
    
 }
-p{
+.login{
     text-align:end
     
     }
@@ -85,17 +155,19 @@ form {
 }
 
 h2 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: center;
 }
-
+p{
+  text-align: center;
+}
 label {
     margin-bottom: 5px;
 }
 
 input, textarea {
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 10px;
+    padding: 13px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
@@ -106,15 +178,18 @@ button {
     padding: 15px;
     border: none;
     border-radius: 4px;
-    background-color: #5cb85c;
+    background-color: #d4110a;
     color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+      cursor: pointer;
     width:50%;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
-button:hover {
-    background-color: #4cae4c;
+
+.invalid label{
+  color:red;
+}
+.invalid input{
+  border:2px red double;
 }
 </style>
