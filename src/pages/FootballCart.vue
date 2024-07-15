@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="mg-top">Your Items:</h1>
-    <section class="container">
-      <ul id="cart" v-if="getCart.length > 0">
+    <section class="container" v-if="getCart.length > 0">
+      <ul id="cart" >
         <cartItem
           v-for="cart in getCart"
           :key="cart.id"
@@ -12,10 +12,12 @@
           :type="cart.type"
           :quantity="cart.quantity"
         ></cartItem>
-        <button class="button-9 mg-top" @click="addtoOrders">Order</button>
+       
       </ul>
-      <p v-else>Your cart is empty.</p>
+       <button class="button-9 mg-top" @click="addtoOrders">Order</button>
+      
     </section>
+    <p v-else>Your cart is empty.</p>
   </div>
 </template>
 <script>
@@ -75,16 +77,15 @@ p {
   text-align: center;
 }
 #cart {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  gap: 1rem;
+ display:flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ gap:1rem;
+
 }
 button {
   text-align: center;
   width: 200px;
+  margin:0 auto;
 }
 </style>

@@ -37,11 +37,7 @@ export default {
 
 <style scoped>
 #cartitem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  
 }
 .size-1 {
   height: 2rem;
