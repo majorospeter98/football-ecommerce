@@ -40,7 +40,7 @@ export default {
         auth.isUserLoggedIn = true;
         auth.whoisLoggedIn = this.email;
         auth.changeIsUser(true);
-        alert("Sikeres bejelentkezés");
+        alert("Succesfully loged in");
         this.$router.push("/store");
       } else {
         alert("Wrong email/password");

@@ -117,8 +117,7 @@ export default {
       let emailIsExist = auth.registeredUsers.filter(
         (registeredEmail) => registeredEmail.email === this.email.val
       );
-      console.log(emailIsExist);
-      const registeredUser = {
+            const registeredUser = {
         email: this.email.val,
         userName: this.userName.val,
         password: this.password.val,

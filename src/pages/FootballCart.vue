@@ -49,8 +49,7 @@ export default {
       let checker = auth.whoisLoggedIn;
       const cart = useCart();
       for (let item in cart.cart) {
-        console.log(cart.cart);
-        this.id = cart.cart[item].id;
+               this.id = cart.cart[item].id;
         this.img = cart.cart[item].img;
         this.team = cart.cart[item].team;
         this.type = cart.cart[item].type;

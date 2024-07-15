@@ -2,7 +2,7 @@
   <div>
     <header id="header">
       <router-link to="/store">Store</router-link>
-      <router-link to="/MyOrders" v-if="isLoggedin">Rendeléseim</router-link>
+      <router-link to="/MyOrders" v-if="isLoggedin">My Orders</router-link>
       <section id="svg">
         <router-link to="/cart">
           <svg
@@ -44,14 +44,12 @@ export default {
     isLoggedin() {
       const auth = useAuth();
       const isUserLogged = auth.getIsUser;
-      console.log(isUserLogged);
-      return isUserLogged;
+          return isUserLogged;
     },
     getEmail() {
       const auth = useAuth();
       const whoisLoggedIn = auth.whoisLoggedIn;
-      console.whoisLoggedIn;
-      return whoisLoggedIn;
+           return whoisLoggedIn;
     },
   },
   methods: {
@@ -59,15 +57,13 @@ export default {
       const auth12 = useAuth();
       auth12.isUserLoggedIn = false;
       auth12.whoisLoggedIn = null;
-      console.log(auth12.isUserLoggedIn);
-      console.log("xd");
+     
     },
   },
   created() {
-    console.log(this.isLoggedin);
+
     const auth = useAuth();
-    console.log(auth.getIsUser);
-    console.log(auth.isUserLoggedIn);
+ 
     this.teszt = auth.getIsUser;
   },
 };

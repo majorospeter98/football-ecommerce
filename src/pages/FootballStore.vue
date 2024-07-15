@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     addToCart(id) {
-      console.log(id);
+      
       return "/store" + id;
     },
   },
