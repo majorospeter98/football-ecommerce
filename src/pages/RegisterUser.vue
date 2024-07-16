@@ -13,7 +13,7 @@
             v-model="email.val"
             required
           />
-          <p v-if="!email.isEmailIsValid">Your email is not long enough.</p>
+          <p v-if="!email.isEmailIsValid"> Your email should be atleast 8 character</p>
         </div>
         <div :class="{ invalid: !userName.isUserNameIsValid }">
           <label for="userName">UserName:</label>
@@ -25,7 +25,7 @@
             required
           />
           <p v-if="!userName.isUserNameIsValid">
-            Your username is not long enough.
+             Your username should be atleast 8 character
           </p>
         </div>
         <div :class="{ invalid: !password.isPasswordIsValid }">
@@ -38,7 +38,7 @@
             required
           />
           <p v-if="!password.isPasswordIsValid">
-            Your password is not long enough..
+            Your password should be atleast 8 character
           </p>
         </div>
         <div :class="{ invalid: !confirm.isPasswordIsConfirm }">
@@ -51,7 +51,7 @@
             required
           />
           <p v-if="!confirm.isPasswordIsConfirm">
-            Your passwords doesnt match..
+            Your passwords doesn't match
           </p>
         </div>
         <button type="submit">Register</button>

@@ -28,6 +28,7 @@ export default {
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Atkinson Hyperlegible", sans-serif;
+  line-height: 1.63;
 }
 .container{
   width:80%;
@@ -80,8 +81,9 @@ img{
 .button-9:hover{
   background: white;
   color:red;
-  border:1px red solid;
-}
+  border: 1px red solid;
+  text-decoration: none;
+ }
 
 
 

@@ -19,7 +19,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import { useAuth } from "../stores/auth";
 export default {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="detail">
+    <section id="detail" class="mg-top">
       <div id="detailsImg">
         <img
           :src="require(`../assets/Teams/${selectedId.img}`)"
@@ -24,6 +24,9 @@
           <option value="10">10</option>
         </select>
         <button class="button-9" @click="sentToCart">Add To Cart</button>
+        <p @click="toggleDetail" class="toggle" :style="{fontSize:'2rem'}">Details: {{toggleDetails ? '-' : '+'}}</p>
+        <p v-if="toggleDetails">ID: {{selectedId.id}}</p>
+           <p v-if="toggleDetails">Brand: {{selectedId.brand}}</p>
       </div>
     </section>
   </div>
@@ -37,6 +40,7 @@ export default {
     return {
       selectedId: null,
       quantity: 1,
+      toggleDetails:false
     };
   },
   created() {
@@ -46,9 +50,11 @@ export default {
     );
   },
   methods: {
+    toggleDetail(){
+      this.toggleDetails=!this.toggleDetails;
+          },
     sentToCart() {
       const cart = useCart();
-
       const cartData = {
         id: this.selectedId.id,
         quantity: this.quantity,
@@ -56,11 +62,9 @@ export default {
         type: this.selectedId.type,
         img: this.selectedId.img,
       };
-
       let idSearch = cart.cart.filter(
         (cartId) => cartId.id === this.selectedId.id
       );
-
       if (idSearch.length > 0) {
         idSearch[0].quantity += parseInt(this.quantity);
       } else cart.cart.push(cartData);
@@ -79,6 +83,9 @@ export default {
   text-align: center;
   align-items: center;
   gap: 1rem;
+}
+.toggle{
+  cursor: pointer;
 }
 #detail2 {
   display: flex;

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="mg-top">Your Items:</h1>
+    <h1 class="mg-top">{{getCart.length>1 ? 'Your Items:' : 'Your item:'}}</h1>
     <section class="container" v-if="getCart.length > 0" >
-      <ul id="cart" >
+      <ul id="cart" class="mg-top" >
         <cartItem
           v-for="cart in getCart"
           :key="cart.id"
@@ -14,8 +14,7 @@
         ></cartItem>
            </ul>
        <button class="button-9 mg-top" @click="addtoOrders">Order</button>
-         
-    </section>
+            </section>
      <p v-else>Your cart is empty.</p>
   </div>
 </template>
@@ -25,7 +24,7 @@ import { useCart } from "../stores/cart";
 import { useOrder } from "../stores/order";
 import cartItem from "../components/FootballCart/CartItem.vue";
 export default {
-  components: {
+   components: {
     cartItem,
   },
    computed: {
@@ -35,6 +34,7 @@ export default {
     },
   },
   methods: {
+    
     addtoOrders() {
       const order = useOrder();
       const auth = useAuth();
@@ -48,8 +48,7 @@ export default {
         let type = cart.cart[item].type;
         let quantity = cart.cart[item].quantity;
          order.orders.push({id:id,img:img,team:team,type:type,quantity:quantity,auth: checker});
-       
-          }
+                 }
               if(auth.whoisLoggedIn === null){
                 alert("Sikeres rendelés");
               }
@@ -68,6 +67,7 @@ p {
   text-align: center;
 }
 #cart {
+  
  display:flex;
  justify-content: center;
  flex-wrap: wrap;
