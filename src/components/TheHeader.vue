@@ -28,8 +28,6 @@
         </router-link>
       </section>
      
-      
-  
     </header>
   </div>
 </template>
@@ -93,8 +91,10 @@ export default {
 }
 @media  (max-width:700px) {
   #header{
+    padding-top:2rem;
     flex-direction: column;
     gap:1rem;
+    font-size:1.2rem;
   }
 }
 </style>
