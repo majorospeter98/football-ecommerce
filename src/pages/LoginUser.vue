@@ -14,7 +14,7 @@
           v-model="password"
           required
         />
-        <button class="button-9" type="submit">Login</button>
+        <button class="button-10" type="submit">Login</button>
       </form>
     </div>
   </div>
@@ -52,7 +52,7 @@ export default {
 .site {
   display: flex;
   justify-content: center;
-  background-color: #1434a4;
+    background-color: #1c1717;
   height: 90vh;
 }
 .form-container {
@@ -61,12 +61,14 @@ export default {
   width: 90%;
   max-width: 600px;
   padding: 22px;
-  background-color: #fff;
+  background-image: linear-gradient(#990000,#FF0000 );
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  color:white
 }
-p {
+p, a {
   text-align: end;
+  color:white;
 }
 form {
   display: flex;
@@ -75,6 +77,7 @@ form {
 h2 {
   margin-bottom: 20px;
   text-align: center;
+  color:white;
 }
 label {
   margin-bottom: 5px;
@@ -90,12 +93,11 @@ textarea {
 button {
   padding: 15px;
   border: none;
-  border-radius: 4px;
-  background-color: #d4110a;
-  color: #fff;
-  font-size: 16px;
+  border-radius: 20px;
+  background-color: white;
+  color: var(--black);
   cursor: pointer;
   width: 50%;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 </style>

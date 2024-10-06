@@ -9,9 +9,5 @@ export const useCart = defineStore({
       return state.cart;
     },
   },
-  actions: {
-    decrement() {
-      this.count--;
-    },
-  },
+   
 });

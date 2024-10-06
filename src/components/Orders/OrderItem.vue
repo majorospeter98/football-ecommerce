@@ -23,8 +23,10 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color:white;
 }
 .hr{
- border: 3px dashed #ff6347;
+ border: 3px dashed var(--red);
 }
+
 </style>

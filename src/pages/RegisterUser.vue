@@ -136,7 +136,7 @@ export default {
 .site {
   display: flex;
   justify-content: center;
-  background-color: #1434a4;
+  background-color: #1c1717;;
   min-height: 900px;
 }
 .form-container {
@@ -147,9 +147,10 @@ export default {
   width: 90%;
   max-width: 600px;
   padding: 22px;
-  background-color: #fff;
+   background-image: linear-gradient(#990000,#FF0000 );
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  color:white;
 }
 .login {
   text-align: end;
@@ -157,13 +158,15 @@ export default {
 form {
   display: flex;
   flex-direction: column;
+  
 }
 h2 {
   margin-bottom: 10px;
   text-align: center;
 }
-p {
+p,a {
   text-align: center;
+  color:white;
 }
 label {
   margin-bottom: 5px;
@@ -180,8 +183,8 @@ button {
   padding: 15px;
   border: none;
   border-radius: 4px;
-  background-color: #d4110a;
-  color: #fff;
+  background-color: #f5f1f1;
+  color: #111111;
   cursor: pointer;
   width: 50%;
   margin: 2rem auto;

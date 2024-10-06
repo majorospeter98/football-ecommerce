@@ -41,4 +41,7 @@ export default {
   height: 2rem;
   color: red;
 }
+#cartitem{
+ color:white;
+}
 </style>

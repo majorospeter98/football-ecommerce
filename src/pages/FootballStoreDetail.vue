@@ -83,6 +83,7 @@ export default {
   text-align: center;
   align-items: center;
   gap: 1rem;
+  color:white;
 }
 .toggle{
   cursor: pointer;

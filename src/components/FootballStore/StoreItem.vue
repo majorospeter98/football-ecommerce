@@ -1,6 +1,7 @@
 <template>
   <div>
     <section id="footballstore">
+      
       <img
         :src="require(`../../assets/Teams/${img}`)"
         @click="openDetailsImg"
@@ -34,6 +35,13 @@ img {
 #footballstore {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
+  
+
+}
+#footballstore img:hover{
+  transform: translateY(-1rem);
+
 }
 </style>

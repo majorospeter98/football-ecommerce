@@ -65,14 +65,16 @@ export default {
 div h1,
 p {
   text-align: center;
+  color:white;
 }
 #cart {
-  
+ 
  display:flex;
  justify-content: center;
  flex-wrap: wrap;
  gap:1.2rem;
 text-align: center;
+
 }
 button {
   text-align: center;

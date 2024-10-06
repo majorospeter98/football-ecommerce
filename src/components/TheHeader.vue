@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header id="header">
+    <header id="header" class="container">
       <router-link to="/store">Store</router-link>
       <router-link to="/MyOrders" v-if="isLoggedin">My Orders</router-link>
-       <a v-if="isLoggedin">User: {{ getEmail }}</a>
+       <span v-if="isLoggedin">User: {{ getEmail }}</span>
        <router-link :to="'/'" @click="logOut" v-if="isLoggedin"
         >Logout</router-link
       >
@@ -69,32 +69,36 @@ export default {
 };
 </script>
 <style scoped>
-.size-1 {
-  height: 30px;
-  width: 30px;
-  color: #fafa33;
-}
+
 #header {
-  min-height: 100px;
+  margin-top:1rem;
+  min-height: 80px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #1434a4;
+color:white;
   padding: 0.5rem;
+background: linear-gradient(to left, #2b0000, #6b3030);
+border-radius: 10px;
 }
 #header a {
-  color: #fafa33;
+  color:white;
+    text-decoration: none;
+  letter-spacing: 0.1rem;
 }
-#svg {
-  display: flex;
-  margin: 3rem;
+#header a:hover{
+  border-bottom:2px white solid;
 }
+
 @media  (max-width:700px) {
   #header{
+    min-height: 400px;
     padding-top:2rem;
     flex-direction: column;
     gap:1rem;
     font-size:1.2rem;
+    border-radius: 0px;
+   
   }
 }
 </style>

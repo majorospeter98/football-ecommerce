@@ -42,5 +42,9 @@ export default {
   justify-content: space-evenly;
   text-align: center;
   gap: 3rem;
+  
+}
+p{
+  color:white;
 }
 </style>
