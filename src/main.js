@@ -28,19 +28,13 @@ const router = createRouter({
     },
     {
       path: "/cart",
-      
-      component: FootballCart,
-      
-    },
+            component: FootballCart,
+          },
     {
       path: "/MyOrders",
-      
-      component: MyOrders,
-      
-    },
-
-  
-    {
+            component: MyOrders,
+          },
+      {
       path: "/register",
       component: RegisterUser,
     },
@@ -54,10 +48,8 @@ const router = createRouter({
     },
   ],
 });
-
 const app = createApp(App);
 const pinia = createPinia()
 app.use(router);
 app.use(pinia)
-
 app.mount("#app");

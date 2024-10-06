@@ -7,7 +7,6 @@
       <h2> Get ready for the next season!</h2>
         </div>
         <div id="introimage">
-
           <img class="intro" :src="require(`../assets/Teams/Real Madrid/intro1.png`)">
         </div>
     </section>
@@ -17,8 +16,7 @@
         <div class="mg-top">
       <h2>Store</h2>
         </div>
-       
-      <ul class="flexstore mg-top">
+             <ul class="flexstore mg-top">
         <StoreItem
           v-for="store in getStores"
           :key="store.id"
@@ -54,8 +52,7 @@ export default {
   },
   methods: {
     addToCart(id) {
-      
-      return "/store" + id;
+            return "/store" + id;
     },
   },
 };
@@ -63,11 +60,9 @@ export default {
 <style scoped>
 #footballstore h2{
   color:white;
-  letter-spacing: 0.3rem;
   font-size: 3rem;
   text-align: center;
 }
-
 .flexstore {
   display: flex;
   flex-wrap: wrap;
@@ -76,8 +71,6 @@ export default {
   text-align: center;
   gap: 3rem;
   color:white;
-
-  
 }
 #intro{
   min-height:580px;
@@ -88,7 +81,6 @@ export default {
 background: linear-gradient(to left, #ff6a4d, #b8241a);
 border-radius:10px;
 }
-
 .intro{
   height:420px;
   width:470px;
@@ -99,9 +91,9 @@ border-radius:10px;
   gap:2rem;
   }
   #introtext h1{
-    font-size: 50px;
+    font-size: 55px;
   }
-  @media  (max-width:700px) {
+  @media  (max-width:800px) {
   #intro{
     flex-direction: column;
     justify-content: center;

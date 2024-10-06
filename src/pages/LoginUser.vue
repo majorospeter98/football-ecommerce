@@ -69,6 +69,7 @@ export default {
 p, a {
   text-align: end;
   color:white;
+  text-decoration:none;
 }
 form {
   display: flex;

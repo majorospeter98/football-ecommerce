@@ -1,16 +1,18 @@
 <template>
   <div>
-    <section id="detail" class="mg-top">
-      <div id="detailsImg">
+    <section id="detail" class="mg-top container">
+      <div id="details">
+      <div id="detailsinfo">
         <img
           :src="require(`../assets/Teams/${selectedId.img}`)"
           @click="openDetailsImg"
         />
-      </div>
-      <div id="detail2">
+          
         <h2>{{ selectedId.team }}</h2>
         <h3>{{ selectedId.type }}</h3>
-        <label for="quantity">Quantity: </label>
+        </div>
+        <div id="detailstore">
+        <label for="quantity"> Quantity:  
         <select id="quantity" name="quantity" v-model.number="quantity">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -22,11 +24,12 @@
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
-        </select>
+        </select></label>
         <button class="button-9" @click="sentToCart">Add To Cart</button>
         <p @click="toggleDetail" class="toggle" :style="{fontSize:'2rem'}">Details: {{toggleDetails ? '-' : '+'}}</p>
         <p v-if="toggleDetails">ID: {{selectedId.id}}</p>
            <p v-if="toggleDetails">Brand: {{selectedId.brand}}</p>
+      </div>
       </div>
     </section>
   </div>
@@ -75,23 +78,35 @@ export default {
 };
 </script>
 <style scoped>
-#detail {
+#details {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  gap: 1rem;
+   justify-content: space-evenly;
   color:white;
+}
+#detailsinfo{
+  display:flex;
+  flex-direction: column;
+  gap:1rem;
+}
+#detailstore{
+  display:flex;
+  flex-direction: column;
+  gap:1rem;
+  justify-content: center;
 }
 .toggle{
   cursor: pointer;
 }
-#detail2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
+@media  (max-width:700px) {
+  #details{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:2rem;
+     }
+  #intro img{
+height:280px;
+  width:280px;
+  }
+  }
 </style>

@@ -2,7 +2,7 @@
   <div>
     <section id="cartitem">
       <img :src="require(`../../assets/Teams/${img}`)" />
-      <p>Quantity: {{ quantity }}</p>
+      <p class="mg-top">Quantity: {{ quantity }}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -36,12 +36,12 @@ export default {
 </script>
 
 <style scoped>
-
 .size-1 {
   height: 2rem;
   color: red;
 }
 #cartitem{
  color:white;
+ 
 }
 </style>

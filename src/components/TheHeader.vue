@@ -27,8 +27,7 @@
           </svg>
         </router-link>
       </section>
-     
-    </header>
+         </header>
   </div>
 </template>
 <script>
@@ -69,7 +68,6 @@ export default {
 };
 </script>
 <style scoped>
-
 #header {
   margin-top:1rem;
   min-height: 80px;
@@ -84,13 +82,11 @@ border-radius: 10px;
 #header a {
   color:white;
     text-decoration: none;
-  letter-spacing: 0.1rem;
-}
+ }
 #header a:hover{
   border-bottom:2px white solid;
 }
-
-@media  (max-width:700px) {
+@media  (max-width:800px) {
   #header{
     min-height: 400px;
     padding-top:2rem;
@@ -98,7 +94,6 @@ border-radius: 10px;
     gap:1rem;
     font-size:1.2rem;
     border-radius: 0px;
-   
-  }
+     }
 }
 </style>

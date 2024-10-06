@@ -1,7 +1,6 @@
 <template>
   <div id="notfound">Not found</div>
 </template>
-
 <script>
 export default {};
 </script>

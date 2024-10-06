@@ -2,32 +2,25 @@
 <div>
   <the-header></the-header>
  <router-view></router-view>
-
 </div>
 </template>
-
 <script>
 import TheHeader from './components/TheHeader.vue'
-
-
 export default {
   name: 'App',
   components: {
     TheHeader
   },
-     
-  
+      
 }
 </script>
-
 <style>
-
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
   scroll-behavior: smooth;
- font-family: "Days One", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1.65;
@@ -49,25 +42,19 @@ body{
 a{
   text-decoration:none;
   border:none;
-  
-}
+  }
 .router-link-active{
   border-bottom:2px solid white;
   padding:0.5rem;
-
 }
-
 img{
   max-width: 100%;
   height:220px;
   width:260px;
- 
-}
-
+ }
 .mg-top{
   margin-top:2rem;
 }
-/* CSS */
 .button-9 {
   background-color: var(--red);
   border-radius: 6px;
@@ -95,6 +82,4 @@ img{
   border: 1px red solid;
   text-decoration: none;
  }
-
-
 </style>

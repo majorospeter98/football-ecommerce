@@ -11,7 +11,6 @@
     </section>
   </div>
 </template>
-
 <script>
 export default {
   props: ["id", "team", "department", "type", "brand", "img"],
@@ -37,11 +36,8 @@ img {
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  
-
-}
+  }
 #footballstore img:hover{
   transform: translateY(-1rem);
-
 }
 </style>

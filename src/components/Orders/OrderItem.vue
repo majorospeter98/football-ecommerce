@@ -1,23 +1,19 @@
 <template>
   <div>
     <section id="orderitem">
-      
-      <img :src="require(`../../assets/Teams/${img}`)" />
+            <img :src="require(`../../assets/Teams/${img}`)" />
       <p>{{ team }}</p>
       <p>{{ type }}</p>
       <p>Quantity: {{ quantity }}</p>
          <hr class="hr">
     </section>
- 
-  </div>
+   </div>
 </template>
-
 <script>
 export default {
   props: ["id", "img", "team", "type", "quantity"],
 };
 </script>
-
 <style scoped>
 #orderitem {
   display: flex;
@@ -28,5 +24,4 @@ export default {
 .hr{
  border: 3px dashed var(--red);
 }
-
 </style>

@@ -55,8 +55,7 @@ export default {
               else{
                 this.$router.push("/MyOrders");
               }
-                
-      cart.cart = [];
+                      cart.cart = [];
     },
   },
 };
@@ -72,9 +71,8 @@ p {
  display:flex;
  justify-content: center;
  flex-wrap: wrap;
- gap:1.2rem;
+ gap:1.5rem;
 text-align: center;
-
 }
 button {
   text-align: center;

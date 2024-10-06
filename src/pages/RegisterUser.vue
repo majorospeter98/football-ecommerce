@@ -16,7 +16,7 @@
           <p v-if="!email.isEmailIsValid"> Your email should be atleast 8 character</p>
         </div>
         <div :class="{ invalid: !userName.isUserNameIsValid }">
-          <label for="userName">UserName:</label>
+          <label for="userame">Username:</label>
           <input
             type="text"
             id="userName"
@@ -42,7 +42,7 @@
           </p>
         </div>
         <div :class="{ invalid: !confirm.isPasswordIsConfirm }">
-          <label for="passwordconf">Password: Confirm</label>
+          <label for="passwordconf">Password Confirm:</label>
           <input
             type="type"
             id="passworconf"
@@ -167,6 +167,7 @@ h2 {
 p,a {
   text-align: center;
   color:white;
+  text-decoration: none;
 }
 label {
   margin-bottom: 5px;
