@@ -1,24 +1,35 @@
-# football
-Live Demo: https://footballvue.netlify.app/
-## Project setup
-```
+Football Ecommerce
+
+About:
+You can visit football teams kits etc.
+
+Used knowledge: Vue, Pinia, Javascript, HTML5, CSS, 
+
+🖥️ Live Demo: https://footballvue.netlify.app/
+
+Run locally
+Clone the project using the following command:
+
+git clone https://github.com/majorospeter98/football-ecommerce
+
+Navigate to the project directory using the following command:
+
+cd football-ecommerce
+
+Install client dependencies and start the client using the following commands:
+
+cd client
+
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+npm run dev
 
-### Compiles and minifies for production
-```
+Install server dependencies, build and start the server using the following commands:
+
+cd server
+
+npm install
+
 npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+npm start
