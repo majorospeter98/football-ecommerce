@@ -3,7 +3,7 @@
     <div class="form-container">
       <form @submit.prevent="loginUser">
         <p><router-link :to="'/register'">Register</router-link></p>
-        <h2>Login</h2>
+        <h2 class="text-4xl">Login</h2>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" v-model="email" required />
         <label for="name">Password:</label>

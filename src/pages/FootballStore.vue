@@ -1,22 +1,24 @@
 <template>
   <div>
     <div class="mg-top">
-    <section id="intro" class="container">
-      <div id="introtext">
-      <h1> You can buy now.</h1>
-      <h2> Get ready for the next season!</h2>
+    <section  class=" container min-h-200 flex items-center justify-between text-white bg-gradient-to-l from-orangeGradient to-redGradient  rounded-2xl max-md:flex-col  max-md:text-center max-md:justify-center max-md:gap-4 ">
+      <div class=" flex flex-col gap-4">
+      <h1 class="text-7xl text-center font-bold max-sm:text-6xl "> You can buy now.</h1>
+      
+
+      <h2 class="text-gray-200 text-center"> Get ready for the next season!</h2>
         </div>
         <div id="introimage">
-          <img class="intro" :src="require(`../assets/Teams/Real Madrid/intro1.png`)">
+          <img class="h-[420px] w-[470px] max-md:h-[280px] max-md:w-[300px] " :src="require(`../assets/Teams/Real Madrid/intro1.png`)">
         </div>
     </section>
     </div>
     <div class="mg-top">
-    <section id="footballstore" class="container">
+    <section id="footballstore" class="container mb-5">
         <div class="mg-top">
-      <h2>Store</h2>
+      <h2 class="text-5xl font-bold text-white text-center m-4 p-4">Store</h2>
         </div>
-             <ul class="flexstore mg-top">
+            <ul class="flex flex-wrap justify-evenly items-center gap-16 text-white text-center ">
         <StoreItem
           v-for="store in getStores"
           :key="store.id"
@@ -58,51 +60,9 @@ export default {
 };
 </script>
 <style scoped>
-#footballstore h2{
-  color:white;
-  font-size: 3rem;
-  text-align: center;
-}
-.flexstore {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  gap: 3rem;
-  color:white;
-}
-#intro{
-  min-height:580px;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  color:white;
-background: linear-gradient(to left, #ff6a4d, #b8241a);
-border-radius:10px;
-}
-.intro{
-  height:420px;
-  width:470px;
-}
-#introtext{
-  display:flex;
-  flex-direction: column;
-  gap:2rem;
-  }
-  #introtext h1{
-    font-size: 55px;
-  }
-  @media  (max-width:800px) {
-  #intro{
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  #intro img{
-height:280px;
-  width:280px;
-  }
-  
-}
+
+
+
+
+
 </style>

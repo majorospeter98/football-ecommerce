@@ -15,22 +15,7 @@ export default {
 }
 </script>
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.65;
- }
- :root{
-  --black:#1c1717;
-  --red:#d5283d;
-  scrollbar-color:  var(--red) var(--black);
-  scrollbar-width: thin;
- }
+
 body{
   background-color: var(--black);
 }
@@ -47,11 +32,7 @@ a{
   border-bottom:2px solid white;
   padding:0.5rem;
 }
-img{
-  max-width: 100%;
-  height:220px;
-  width:260px;
- }
+
 .mg-top{
   margin-top:2rem;
 }

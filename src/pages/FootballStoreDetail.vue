@@ -13,7 +13,7 @@
         </div>
         <div id="detailstore">
         <label for="quantity"> Quantity:  
-        <select id="quantity" name="quantity" v-model.number="quantity">
+        <select class="text-black" id="quantity" name="quantity" v-model.number="quantity">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -93,6 +93,7 @@ export default {
   flex-direction: column;
   gap:1rem;
   justify-content: center;
+  
 }
 .toggle{
   cursor: pointer;

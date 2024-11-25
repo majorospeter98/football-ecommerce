@@ -3,7 +3,7 @@
     <section id="footballstore">
       
       <img
-        :src="require(`../../assets/Teams/${img}`)"
+        :src="require(`../../assets/Teams/${img}`)" class="h-[240px] w-[260px]"
         @click="openDetailsImg"
       />
       <p>{{ team }}</p>

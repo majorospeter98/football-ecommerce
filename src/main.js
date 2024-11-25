@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { createPinia } from 'pinia'
+import './assets/tailwind.css' 
 import App from "./App.vue";
 import FootballStore from "./pages/FootballStore.vue"
 import NotFound from "./components/NotFound.vue"

@@ -3,7 +3,7 @@
     <div class="form-container">
       <form @submit.prevent="submitForm">
         <p class="login"><router-link :to="'/login'">Login</router-link></p>
-        <h2>Register</h2>
+        <h2 class="text-4xl">Register</h2>
         <div :class="{ invalid: !email.isEmailIsValid }">
           <label for="email">Email:</label>
           <input

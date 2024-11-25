@@ -1,0 +1,26 @@
+*{
+    margin:0;padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.65;
+   }
+
+img{
+    max-width: 100%
+    }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;  
+
+
+   :root{
+    --black:#1c1717;
+    --red:#d5283d;
+    scrollbar-color:  var(--red) var(--black);
+    scrollbar-width: thin;
+   }
