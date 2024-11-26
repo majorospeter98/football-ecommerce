@@ -3,7 +3,7 @@
     <section id="footballstore">
       
       <img
-        :src="require(`../../assets/Teams/${img}`)" class="h-[240px] w-[260px]"
+        :src="require(`../../assets/Teams/${img}`)" class="h-[240px] w-[260px] cursor-pointer"
         @click="openDetailsImg"
       />
       <p>{{ team }}</p>
@@ -28,9 +28,7 @@ export default {
 </script>
 
 <style scoped>
-img {
-  cursor: pointer;
-}
+
 #footballstore {
   display: flex;
   flex-direction: column;
@@ -38,6 +36,6 @@ img {
   gap: 1rem;
   }
 #footballstore img:hover{
-  transform: translateY(-1rem);
+border-radius:50%;
 }
 </style>

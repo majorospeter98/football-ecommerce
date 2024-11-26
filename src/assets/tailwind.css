@@ -6,21 +6,22 @@
     font-weight: 400;
     font-style: normal;
     line-height: 1.65;
+
+   
    }
 
 img{
     max-width: 100%
     }
-
-
+   
+:root{
+    scrollbar-color:  var(--red) var(--black);
+    scrollbar-width: thin;
+    --black:#1c1717;
+    --red:#d5283d;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;  
 
 
-   :root{
-    --black:#1c1717;
-    --red:#d5283d;
-    scrollbar-color:  var(--red) var(--black);
-    scrollbar-width: thin;
-   }

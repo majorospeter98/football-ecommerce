@@ -1,6 +1,6 @@
 <template>
-  <div class="site">
-    <div class="form-container">
+  <div class="site ">
+    <div class="form-container text-black">
       <form @submit.prevent="submitForm">
         <p class="login"><router-link :to="'/login'">Login</router-link></p>
         <h2 class="text-4xl">Register</h2>
@@ -138,6 +138,9 @@ export default {
   justify-content: center;
   background-color: #1c1717;;
   min-height: 900px;
+}
+input{
+  color:black;
 }
 .form-container {
   margin-top: 2rem;

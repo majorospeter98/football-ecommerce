@@ -1,19 +1,19 @@
 <template>
   <div>
-    <section id="detail" class="mg-top container">
-      <div id="details">
-      <div id="detailsinfo">
-        <img
+    <section class="mg-top container">
+      <div class="flex justify-evenly text-white  max-md:flex-col">
+      <div class="flex flex-col gap-5 text-center max-md:items-center">
+        <img class="h-[380px] w-[420px] max-md:h-[250px] max-md:w-[270px]" 
           :src="require(`../assets/Teams/${selectedId.img}`)"
           @click="openDetailsImg"
         />
           
-        <h2>{{ selectedId.team }}</h2>
-        <h3>{{ selectedId.type }}</h3>
+        <h2 class="text-4xl">{{ selectedId.team }}</h2>
+        <h4 class="text-slate-300">{{ selectedId.type }}</h4>
         </div>
-        <div id="detailstore">
-        <label for="quantity"> Quantity:  
-        <select class="text-black" id="quantity" name="quantity" v-model.number="quantity">
+        <div id="detailstore" class="max-md:m-4">
+        <label class="text-2xl" for="quantity"> Quantity:  
+        <select class="text-black m-1.5" id="quantity" name="quantity" v-model.number="quantity">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -25,10 +25,12 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select></label>
-        <button class="button-9" @click="sentToCart">Add To Cart</button>
-        <p @click="toggleDetail" class="toggle" :style="{fontSize:'2rem'}">Details: {{toggleDetails ? '-' : '+'}}</p>
-        <p v-if="toggleDetails">ID: {{selectedId.id}}</p>
+        
+        <p @click="toggleDetail" class="toggle" :style="{fontSize:'1.1rem'}">Details: {{toggleDetails ? '-' : '+'}}</p>
+            <p v-if="toggleDetails">ID: {{selectedId.id}}</p>
            <p v-if="toggleDetails">Brand: {{selectedId.brand}}</p>
+        <button class="button-9" @click="sentToCart">Add To Cart</button>
+    
       </div>
       </div>
     </section>
@@ -78,36 +80,22 @@ export default {
 };
 </script>
 <style scoped>
-#details {
-  display: flex;
-   justify-content: space-evenly;
-  color:white;
-}
-#detailsinfo{
-  display:flex;
-  flex-direction: column;
-  gap:1rem;
-}
+
+
 #detailstore{
   display:flex;
   flex-direction: column;
-  gap:1rem;
-  justify-content: center;
-  
+  gap:2rem;
+justify-content: center;
+text-align: center;
+ 
 }
+
 .toggle{
   cursor: pointer;
 }
 @media  (max-width:700px) {
-  #details{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap:2rem;
-     }
-  #intro img{
-height:280px;
-  width:280px;
-  }
+
+
   }
 </style>

@@ -30,7 +30,8 @@ a{
   }
 .router-link-active{
   border-bottom:2px solid white;
-  padding:0.5rem;
+ 
+   
 }
 
 .mg-top{
@@ -55,7 +56,8 @@ a{
   text-transform: none;
   transform: translateZ(0);
   transition: all .2s,box-shadow .08s ease-in;
-    width: 100%;
+    width:240px;
+    margin: 0 auto;
 }
 .button-9:hover{
   background: black;

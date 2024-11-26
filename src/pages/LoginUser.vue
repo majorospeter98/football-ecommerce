@@ -1,6 +1,6 @@
 <template>
   <div class="site">
-    <div class="form-container">
+    <div class="form-container text-black">
       <form @submit.prevent="loginUser">
         <p><router-link :to="'/register'">Register</router-link></p>
         <h2 class="text-4xl">Login</h2>
