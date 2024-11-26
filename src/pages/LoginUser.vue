@@ -1,6 +1,6 @@
 <template>
   <div class="site">
-    <div class="form-container text-black">
+    <div class="form-container">
       <form @submit.prevent="loginUser">
         <p><router-link :to="'/register'">Register</router-link></p>
         <h2 class="text-4xl">Login</h2>
@@ -64,7 +64,7 @@ export default {
   background-image: linear-gradient(#990000,#FF0000 );
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  color:white
+  color:black;
 }
 p, a {
   text-align: end;
@@ -82,6 +82,7 @@ h2 {
 }
 label {
   margin-bottom: 5px;
+  color:white;
 }
 input,
 textarea {

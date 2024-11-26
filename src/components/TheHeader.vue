@@ -88,10 +88,13 @@ border-radius: 10px;
     text-decoration: none;
  }
 #header a:hover{
-  
+  border-bottom: 2px solid white;
 }
 .svg{
 outline: none;
+border:none;
+margin:0;
+padding:0;
 }
 @media  (max-width:800px) {
   #header{

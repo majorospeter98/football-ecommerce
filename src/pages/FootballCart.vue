@@ -2,7 +2,7 @@
   <div>
     <h1 v-if="getCart.length>0" class="mg-top text-5xl font-bold">{{getCart.length>1 ? 'Your Items:' : 'Your item:'}}</h1>
     <section class="container" v-if="getCart.length > 0" >
-      <ul id="cart" class="mt-5" >
+      <ul id="cart" class="m-5" >
         <cartItem
           v-for="cart in getCart"
           :key="cart.id"

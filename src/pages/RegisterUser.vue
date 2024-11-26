@@ -1,5 +1,5 @@
 <template>
-  <div class="site ">
+  <div class="site text-black">
     <div class="form-container text-black">
       <form @submit.prevent="submitForm">
         <p class="login"><router-link :to="'/login'">Login</router-link></p>
@@ -139,9 +139,7 @@ export default {
   background-color: #1c1717;;
   min-height: 900px;
 }
-input{
-  color:black;
-}
+
 .form-container {
   margin-top: 2rem;
   margin-top: 2rem;
@@ -153,7 +151,7 @@ input{
    background-image: linear-gradient(#990000,#FF0000 );
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  color:white;
+  color:black;
 }
 .login {
   text-align: end;
@@ -166,15 +164,18 @@ form {
 h2 {
   margin-bottom: 10px;
   text-align: center;
+  color:white;
+}
+label{
+  color:white;
+  margin-bottom: 5px;
 }
 p,a {
   text-align: center;
   color:white;
   text-decoration: none;
 }
-label {
-  margin-bottom: 5px;
-}
+
 input,
 textarea {
   margin-bottom: 10px;

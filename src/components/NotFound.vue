@@ -1,9 +1,10 @@
 <template>
-  <div id="notfound">Not found</div>
+<div class="flex flex-col justify-center items-center min-h-96 text-white">
+  <div class=" text-8xl font-bold mt-6">Not Found</div>
+  <router-link to="/store">Store</router-link>
+</div>
 </template>
-<script>
-export default {};
-</script>
+
 <style scoped>
 #notfound {
   height: 80vh;
