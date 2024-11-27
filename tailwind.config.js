@@ -12,8 +12,8 @@ module.exports = {
         "redGradient": "#b8241a"
       },
       screens: {
-        'max-sm': { max: '700px' }, // 639px alatt érvényes
-        'max-md': { max: '800px' }, // 767px alatt érvényes
+        'max-sm': { max: '600px' }, 
+        'max-md': { max: '850px' }, 
         
       },
     },

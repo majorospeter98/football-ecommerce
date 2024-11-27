@@ -1,27 +1,33 @@
-*{
-    margin:0;padding:0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.65;
-
-   
-   }
-
-img{
-    max-width: 100%
-    }
-   
-:root{
-    scrollbar-color:  var(--red) var(--black);
-    scrollbar-width: thin;
-    --black:#1c1717;
-    --red:#d5283d;
-}
 @tailwind base;
 @tailwind components;
-@tailwind utilities;  
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.65;
+}
+img {
+  max-width: 100%;
+}
 
-
+:root {
+  scrollbar-color: var(--red) var(--black);
+  scrollbar-width: thin;
+  --black: #1c1717;
+  --red: #d5283d;
+}
+@layer base {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+}

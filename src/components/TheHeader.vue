@@ -27,6 +27,7 @@
              
             />
 </svg>
+<h3 class="text-center">{{getCartLength}}</h3>
 </router-link>
      
       </section>
@@ -35,6 +36,8 @@
 </template>
 <script>
 import { useAuth } from "../stores/auth";
+import { useCart } from '../stores/cart';
+
 export default {
   data() {
     return {
@@ -53,6 +56,11 @@ export default {
       const whoisLoggedIn = auth.whoisLoggedIn;
            return whoisLoggedIn;
     },
+    getCartLength(){
+      const cart=useCart();
+      const cartLength=cart.cart.length;
+      return cartLength;
+    }
   },
   methods: {
     logOut() {
@@ -84,18 +92,13 @@ border-radius: 10px;
 }
 
 #header a {
-  color:white;
-    text-decoration: none;
+ 
+    
  }
 #header a:hover{
   border-bottom: 2px solid white;
 }
-.svg{
-outline: none;
-border:none;
-margin:0;
-padding:0;
-}
+
 @media  (max-width:800px) {
   #header{
     min-height: 400px;

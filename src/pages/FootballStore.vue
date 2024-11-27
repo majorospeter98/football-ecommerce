@@ -2,25 +2,29 @@
   <div>
     
     <section  class=" mt-4 container min-h-200 flex items-center justify-between text-white bg-gradient-to-l from-orangeGradient to-redGradient  rounded-2xl max-md:flex-col  max-md:text-center max-md:justify-center max-md:gap-4 ">
-      <div class=" flex flex-col gap-4">
+      <div class=" flex flex-col gap-4 items-center">
+        <div>
       <h1 class="text-7xl text-center font-bold max-sm:text-6xl "> You can buy now.</h1>
-      
-
-      <h2 class="text-gray-200 text-center"> Get ready for the next season!</h2>
+        </div>
+            <h2 class="text-gray-200 text-center "> Get ready for the next season!</h2>
         </div>
         <div id="introimage">
-          <img class="h-[420px] w-[470px] max-md:h-[280px] max-md:w-[300px] " :src="require(`../assets/Teams/Real Madrid/intro1.png`)">
+          <img class="h-[380px] w-[420px] max-md:h-[280px] max-md:w-[300px] " :src="require(`../assets/Teams/Real Madrid/intro1.png`)">
         </div>
     </section>
     
     <div class="mg-top">
-    <section id="footballstore" class="container mb-5">
+    <section class="container mb-5 overflow-hidden">
         <div class="mg-top">
       <h2 class="text-5xl font-bold text-white text-center m-4 p-4">Store</h2>
         </div>
-            <ul class="flex flex-wrap justify-evenly items-center gap-16 text-white text-center ">
+        <div class="flex  justify-center h-8 items-center">
+        <label class="text-white" for="site-search">Search by team name:
+<input type="search" id="site-search" v-model="searchText" name="q" class="ml-3 pl-2 text-black border:none outline-none" /></label >
+        </div>
+            <ul class="list flex flex-wrap justify-evenly items-center gap-16 mt-5 text-white text-center overflow-hidden">
         <StoreItem
-          v-for="store in getStores"
+          v-for="store in filteredStore"
           :key="store.id"
           :id="store.id"
           :team="store.team"
@@ -44,13 +48,21 @@ export default {
     StoreItem,
   },
   data() {
-    return {};
+    return {
+      searchText:"",
+          };
   },
   computed: {
-    getStores() {
+    
+    filteredStore(){
       const store = useStores();
-      return store.getStores;
-    },
+      const storedTeams=store.stores;
+      console.log(storedTeams);
+      const filteredArray=storedTeams.filter(storeItem => storeItem.team.toLocaleLowerCase().includes(this.searchText.toLowerCase()))
+      console.log(filteredArray);
+
+return filteredArray
+    }
   },
   methods: {
     addToCart(id) {
@@ -59,10 +71,4 @@ export default {
   },
 };
 </script>
-<style scoped>
 
-
-
-
-
-</style>

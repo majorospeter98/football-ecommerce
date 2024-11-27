@@ -195,9 +195,10 @@ button {
   margin: 2rem auto;
 }
 .invalid label {
-  color: red;
+  color: black;
 }
 .invalid input {
-  border: 2px red double;
+  outline: 8px #bdbdbd
+ solid;
 }
 </style>

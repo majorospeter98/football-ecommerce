@@ -24,10 +24,7 @@ body{
   max-width: 1200px;
   margin:0 auto;
 }
-a{
-  text-decoration:none;
-  border:none;
-  }
+
 .router-link-active{
   border-bottom:2px solid white;
  

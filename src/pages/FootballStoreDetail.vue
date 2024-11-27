@@ -1,9 +1,9 @@
 <template>
   <div>
     <section class="mg-top container">
-      <div class="flex justify-evenly text-white  max-md:flex-col">
+      <div class="flex justify-evenly text-white gap-3  max-md:flex-col">
       <div class="flex flex-col gap-5 text-center max-md:items-center">
-        <img class="h-[380px] w-[420px] max-md:h-[250px] max-md:w-[270px]" 
+        <img class="h-[330px] w-[380px] max-md:h-[250px] max-md:w-[270px]" 
           :src="require(`../assets/Teams/${selectedId.img}`)"
           @click="openDetailsImg"
         />
@@ -91,11 +91,5 @@ text-align: center;
  
 }
 
-.toggle{
-  cursor: pointer;
-}
-@media  (max-width:700px) {
 
-
-  }
 </style>

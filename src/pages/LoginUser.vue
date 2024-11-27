@@ -42,7 +42,7 @@ export default {
         alert("Successfully logged in");
         this.$router.push("/store");
       } else {
-        alert("Wrong email/password");
+        alert("Wrong Email/Password");
       }
     },
   },
@@ -69,7 +69,7 @@ export default {
 p, a {
   text-align: end;
   color:white;
-  text-decoration:none;
+ 
 }
 form {
   display: flex;

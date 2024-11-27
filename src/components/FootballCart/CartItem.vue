@@ -1,7 +1,7 @@
 <template>
   <div>
     <section id="cartitem" class="flex flex-col justify-center items-center gap-4 " >
-      <img class="h-[300px] w-[330px] border-teal-950" :src="require(`../../assets/Teams/${img}`)" />
+      <img class="h-[260px] w-[280px] border-teal-950" :src="require(`../../assets/Teams/${img}`)" />
       <p class="mt-4 font-semibold text-3xl">Quantity: {{ quantity }}</p>
    <svg
   xmlns="http://www.w3.org/2000/svg"
