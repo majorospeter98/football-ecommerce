@@ -14,15 +14,15 @@
     </section>
     
     <div class="mg-top">
-    <section class="container mb-5 overflow-hidden">
+    <section class="container mb-5 ">
         <div class="mg-top">
       <h2 class="text-5xl font-bold text-white text-center m-4 p-4">Store</h2>
         </div>
-        <div class="flex  justify-center h-8 items-center">
+        <div class="flex  justify-center h-8 items-center text-center">
         <label class="text-white" for="site-search">Search by team name:
 <input type="search" id="site-search" v-model="searchText" name="q" class="ml-3 pl-2 text-black border:none outline-none" /></label >
         </div>
-            <ul class="list flex flex-wrap justify-evenly items-center gap-16 mt-5 text-white text-center overflow-hidden">
+            <ul class="list flex flex-wrap justify-evenly items-center gap-16 mt-5 text-white text-center ">
         <StoreItem
           v-for="store in filteredStore"
           :key="store.id"
@@ -57,10 +57,9 @@ export default {
     filteredStore(){
       const store = useStores();
       const storedTeams=store.stores;
-      console.log(storedTeams);
+     
       const filteredArray=storedTeams.filter(storeItem => storeItem.team.toLocaleLowerCase().includes(this.searchText.toLowerCase()))
-      console.log(filteredArray);
-
+      
 return filteredArray
     }
   },

@@ -11,7 +11,7 @@
         <h2 class="text-4xl">{{ selectedId.team }}</h2>
         <h4 class="text-slate-300">{{ selectedId.type }}</h4>
         </div>
-        <div id="detailstore" class="max-md:m-4">
+        <div class="max-md:m-4 flex flex-col justify-center text-center gap-4">
         <label class="text-2xl" for="quantity"> Quantity:  
         <select class="text-black m-1.5" id="quantity" name="quantity" v-model.number="quantity">
           <option value="1">1</option>
@@ -79,17 +79,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-
-
-#detailstore{
-  display:flex;
-  flex-direction: column;
-  gap:2rem;
-justify-content: center;
-text-align: center;
- 
-}
-
-
-</style>

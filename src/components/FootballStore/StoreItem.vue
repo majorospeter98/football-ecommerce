@@ -1,9 +1,9 @@
 <template>
   <div>
-    <section id="footballstore">
+    <section class="flex flex-col justify-between gap-5">
       
       <img
-        :src="require(`../../assets/Teams/${img}`)" class="h-[240px] w-[260px] cursor-pointer"
+        :src="require(`../../assets/Teams/${img}`)" class="h-[240px] w-[260px] cursor-pointer hover:rounded-full"
         @click="openDetailsImg"
       />
       <p>{{ team }}</p>
@@ -26,16 +26,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-#footballstore {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  }
-#footballstore img:hover{
-border-radius:50%;
-}
-</style>

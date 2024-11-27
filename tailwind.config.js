@@ -9,7 +9,12 @@ module.exports = {
       },
       colors:{
         "orangeGradient": "#ff6a4d",
-        "redGradient": "#b8241a"
+        "redGradient": "#b8241a",
+        "lightBrownGradient": "#6b3030",
+        "darkBrownGradient": "#2b0000",
+        "lighRedGradient": "#FF0000 ",
+        "darkRedGradient" :"#990000"
+    
       },
       screens: {
         'max-sm': { max: '600px' }, 
