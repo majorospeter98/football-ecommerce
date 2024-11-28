@@ -27,13 +27,9 @@ body{
 
 .router-link-active{
   border-bottom:2px solid white;
- 
-   
+    
 }
 
-.mg-top{
-  margin-top:2rem;
-}
 .button-9 {
   background-color: var(--red);
   border-radius: 6px;

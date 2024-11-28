@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <ul class="mg-top" id="orders" v-if="getOrders.length > 0">
+    <ul class="orders" v-if="getOrders.length > 0">
       <orderitem
         v-for="orders in getOrders"
         :key="orders.id"

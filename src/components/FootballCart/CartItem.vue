@@ -1,8 +1,8 @@
 <template>
   <div>
-    <section id="cartitem" class="flex flex-col justify-center items-center gap-4 " >
-      <img class="h-[260px] w-[280px] border-teal-950" :src="require(`../../assets/Teams/${img}`)" />
-      <p class="mt-4 font-semibold text-3xl">Quantity: {{ quantity }}</p>
+    <section id="cartitem" class="mt-3 flex flex-col justify-center items-center gap-4  " >
+      <img class="h-[240px] w-[280px] border-teal-950" :src="require(`../../assets/Teams/${img}`)" />
+      <p class=" font-semibold text-3xl text-white text-center">Quantity: {{ quantity }}</p>
    <svg
   xmlns="http://www.w3.org/2000/svg"
   fill="red" 
@@ -35,10 +35,3 @@ export default {
 };
 </script>
 
-<style scoped>
-
-#cartitem{
- color:white;
- 
-}
-</style>

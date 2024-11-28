@@ -18,8 +18,6 @@ return state.cart;
     changeIsUser(state){
        this.isUserLoggedIn=state
        },
-    decrement() {
-      this.count--
-    },
+    
   },
 })

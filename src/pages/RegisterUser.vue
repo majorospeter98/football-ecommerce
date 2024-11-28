@@ -1,60 +1,60 @@
 <template>
-  <div class="site text-black">
-    <div class="form-container text-black">
-      <form @submit.prevent="submitForm">
-        <p class="login"><router-link :to="'/login'">Login</router-link></p>
-        <h2 class="text-4xl">Register</h2>
+  <div class=" flex justify-center">
+    <div class="form-container text-black m-4 min-h-200 w-[90%] max-w-[600px] p-6 rounded-xl bg-gradient-to-r from-darkRedGradient to-lighRedGradient">
+      <form @submit.prevent="submitForm" class="flex flex-col">
+        <p class="login text-right "><router-link class="hover:border-none" :to="'/login'">Login</router-link></p>
+        <h2 class="text-4xl text-center text-white mb-3">Register</h2>
         <div :class="{ invalid: !email.isEmailIsValid }">
-          <label for="email">Email:</label>
-          <input
+          <label class="text-white mb-2" for="email">Email:</label>
+          <input  class="input"
             type="email"
             id="email"
             name="email"
             v-model="email.val"
             required
           />
-          <p v-if="!email.isEmailIsValid"> Your email should be atleast 8 character</p>
+          <p class="text-white text-center" v-if="!email.isEmailIsValid"> Your email should be atleast 8 character</p>
         </div>
         <div :class="{ invalid: !userName.isUserNameIsValid }">
-          <label for="userame">Username:</label>
-          <input
+          <label class="text-white mb-2" for="userame">Username:</label>
+          <input class="input"
             type="text"
             id="userName"
             name="userName"
             v-model="userName.val"
             required
           />
-          <p v-if="!userName.isUserNameIsValid">
+          <p class="text-white text-center" v-if="!userName.isUserNameIsValid">
              Your username should be atleast 8 character
           </p>
         </div>
         <div :class="{ invalid: !password.isPasswordIsValid }">
-          <label for="name">Password:</label>
-          <input
+          <label class="text-white mb-2" for="name">Password:</label>
+          <input class="input"
             type="password"
             id="name"
             name="name"
             v-model="password.val"
             required
           />
-          <p v-if="!password.isPasswordIsValid">
+          <p class="text-white text-center" v-if="!password.isPasswordIsValid">
             Your password should be atleast 8 character
           </p>
         </div>
         <div :class="{ invalid: !confirm.isPasswordIsConfirm }">
-          <label for="passwordconf">Password Confirm:</label>
-          <input
+          <label class="text-white mb-2" for="passwordconf">Password Confirm:</label>
+          <input class="input"
             type="type"
             id="passworconf"
             name="passwordconf"
             v-model="confirm.val"
             required
           />
-          <p v-if="!confirm.isPasswordIsConfirm">
+          <p class="text-white text-center" v-if="!confirm.isPasswordIsConfirm">
             Your passwords doesn't match
           </p>
         </div>
-        <button type="submit">Register</button>
+        <button class="button" type="submit">Register</button>
       </form>
     </div>
   </div>
@@ -133,72 +133,14 @@ export default {
 };
 </script>
 <style scoped>
-.site {
-  display: flex;
-  justify-content: center;
-  background-color: #1c1717;;
-  min-height: 900px;
-}
 
-.form-container {
-  margin-top: 2rem;
-  margin-top: 2rem;
-  height: 100%;
-  min-height: 700px;
-  width: 90%;
-  max-width: 600px;
-  padding: 22px;
-   background-image: linear-gradient(#990000,#FF0000 );
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  color:black;
-}
-.login {
-  text-align: end;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  
-}
-h2 {
-  margin-bottom: 10px;
-  text-align: center;
-  color:white;
-}
-label{
-  color:white;
-  margin-bottom: 5px;
-}
-p,a {
-  text-align: center;
-  color:white;
-  text-decoration: none;
-}
 
-input,
-textarea {
-  margin-bottom: 10px;
-  padding: 13px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-}
-button {
-  padding: 15px;
-  border: none;
-  border-radius: 4px;
-  background-color: #f5f1f1;
-  color: #111111;
-  cursor: pointer;
-  width: 50%;
-  margin: 2rem auto;
-}
-.invalid label {
-  color: black;
-}
+
+
+
 .invalid input {
-  outline: 8px #bdbdbd
- solid;
+
+  outline: 7px #053896
+solid;
 }
 </style>
