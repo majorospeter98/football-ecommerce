@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 v-if="getCart.length>0" class="mt-3 text-5xl font-bold text-white text-center">{{getCart.length>1 ? 'Your Items:' : 'Your item:'}}</h1>
+    <h1 v-if="getCart.length>0" class="mt-5 text-5xl font-bold text-white text-center">{{getCart.length>1 ? 'Your Items:' : 'Your item:'}}</h1>
     <section class="container" v-if="getCart.length > 0" >
-      <ul class="flex justify-center flex-wrap gap-6">
+      <ul class="flex justify-center flex-wrap gap-6 mt-3">
         <cartItem
           v-for="cart in getCart"
           :key="cart.id"

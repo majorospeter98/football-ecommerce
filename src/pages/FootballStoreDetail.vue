@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mg-top container">
+    <section class="mt-5 container">
       <div class="flex justify-evenly text-white gap-3  max-md:flex-col">
       <div class="flex flex-col gap-5 text-center max-md:items-center">
         <img class="h-[330px] w-[380px] max-md:h-[250px] max-md:w-[270px]" 

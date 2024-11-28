@@ -123,7 +123,7 @@ export default {
         password: this.password.val,
       };
       if (emailIsExist.length > 0) {
-        alert("Már regisztráltak ezzel az email címmel");
+        alert("Already Registered with this email address ");
       } else {
         auth.registeredUsers.push(registeredUser);
         this.$router.push("/login");
@@ -133,11 +133,6 @@ export default {
 };
 </script>
 <style scoped>
-
-
-
-
-
 .invalid input {
 
   outline: 7px #053896

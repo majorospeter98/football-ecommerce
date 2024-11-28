@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <ul class="orders" v-if="getOrders.length > 0">
+    <ul class="mt-5 mb-5 flex flex-wrap items-center justify-evenly text-center gap-6" v-if="getOrders.length > 0">
       <orderitem
         v-for="orders in getOrders"
         :key="orders.id"
@@ -11,7 +11,7 @@
         :quantity="orders.quantity"
       ></orderitem>
     </ul>
-    <p v-else class="mg-top">You don't have orders currently.</p>
+    <p v-else class="text-center text-white mt-5 text-4xl">You don't have orders currently.</p>
   </div>
 </template>
 <script>
@@ -34,16 +34,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-#orders {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  gap: 3rem;
-  }
-p{
-  color:white;
-}
-</style>
