@@ -1,7 +1,7 @@
 <template>
   <div>
-    <header id="header"
-        class="container mt-3 min-h-20 flex flex-1 justify-evenly items-center  p-0 bg-gradient-to-l from-darkBrownGradient to-lightBrownGradient max-md:flex-col max-md:min-h-96"
+    <header
+      class="container mt-3 min-h-20 flex flex-1 justify-evenly items-center p-0 bg-gradient-to-l from-darkBrownGradient to-lightBrownGradient max-md:flex-col max-md:min-h-96"
     >
       <router-link to="/store">Store</router-link>
       <router-link to="/MyOrders" v-show="isLoggedin">My Orders</router-link>
@@ -74,25 +74,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-header {
-  outline: 1px solid red;
-  display: flex;
-  justify-content: space-around; /* Vagy próbáld ki a `space-around`-ot */
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 3rem; /* Fix padding, ha szükséges */
-}
-</style>

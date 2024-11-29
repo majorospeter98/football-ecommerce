@@ -9,5 +9,4 @@ export const useOrder = defineStore({
       return state.cart;
     },
   },
-  
 });

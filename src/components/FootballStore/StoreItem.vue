@@ -1,9 +1,9 @@
 <template>
   <div>
     <section class="flex flex-col justify-evenly gap-4 m-2">
-      
       <img
-        :src="require(`../../assets/Teams/${img}`)" class="h-[240px] w-[260px] cursor-pointer hover:rounded-full"
+        :src="require(`../../assets/Teams/${img}`)"
+        class="h-[240px] w-[260px] cursor-pointer hover:rounded-full"
         @click="openDetailsImg"
       />
       <p>{{ team }}</p>

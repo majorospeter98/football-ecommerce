@@ -1,23 +1,33 @@
 <template>
-  <div class=" flex justify-center">
-    <div class="form-container text-black m-4 min-h-200 w-[90%] max-w-[600px] p-6 rounded-xl bg-gradient-to-r from-darkRedGradient to-lighRedGradient">
+  <div class="flex justify-center">
+    <div
+      class="form-container text-black m-4 min-h-200 w-[90%] max-w-[600px] p-6 rounded-xl bg-gradient-to-r from-darkRedGradient to-lighRedGradient"
+    >
       <form @submit.prevent="submitForm" class="flex flex-col">
-        <p class="login text-right "><router-link class="hover:border-none" :to="'/login'">Login</router-link></p>
+        <p class="login text-right">
+          <router-link class="hover:border-none" :to="'/login'"
+            >Login</router-link
+          >
+        </p>
         <h2 class="text-4xl text-center text-white mb-3">Register</h2>
         <div :class="{ invalid: !email.isEmailIsValid }">
           <label class="text-white mb-2" for="email">Email:</label>
-          <input  class="input"
+          <input
+            class="input"
             type="email"
             id="email"
             name="email"
             v-model="email.val"
             required
           />
-          <p class="text-white text-center" v-if="!email.isEmailIsValid"> Your email should be atleast 8 character</p>
+          <p class="text-white text-center" v-if="!email.isEmailIsValid">
+            Your email should be atleast 8 character
+          </p>
         </div>
         <div :class="{ invalid: !userName.isUserNameIsValid }">
           <label class="text-white mb-2" for="userame">Username:</label>
-          <input class="input"
+          <input
+            class="input"
             type="text"
             id="userName"
             name="userName"
@@ -25,12 +35,13 @@
             required
           />
           <p class="text-white text-center" v-if="!userName.isUserNameIsValid">
-             Your username should be atleast 8 character
+            Your username should be atleast 8 character
           </p>
         </div>
         <div :class="{ invalid: !password.isPasswordIsValid }">
           <label class="text-white mb-2" for="name">Password:</label>
-          <input class="input"
+          <input
+            class="input"
             type="password"
             id="name"
             name="name"
@@ -42,8 +53,11 @@
           </p>
         </div>
         <div :class="{ invalid: !confirm.isPasswordIsConfirm }">
-          <label class="text-white mb-2" for="passwordconf">Password Confirm:</label>
-          <input class="input"
+          <label class="text-white mb-2" for="passwordconf"
+            >Password Confirm:</label
+          >
+          <input
+            class="input"
             type="type"
             id="passworconf"
             name="passwordconf"
@@ -117,7 +131,7 @@ export default {
       let emailIsExist = auth.registeredUsers.filter(
         (registeredEmail) => registeredEmail.email === this.email.val
       );
-            const registeredUser = {
+      const registeredUser = {
         email: this.email.val,
         userName: this.userName.val,
         password: this.password.val,
@@ -126,7 +140,7 @@ export default {
         alert("Already Registered with this email address ");
       } else {
         auth.registeredUsers.push(registeredUser);
-        alert("Successful registration!")
+        alert("Successful registration!");
         this.$router.push("/login");
       }
     },
@@ -135,8 +149,6 @@ export default {
 </script>
 <style scoped>
 .invalid input {
-
-  outline: 7px #053896
-solid;
+  outline: 7px #053896 solid;
 }
 </style>

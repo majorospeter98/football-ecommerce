@@ -75,7 +75,6 @@ export const useStores = defineStore({
         brand: "Nike",
         img: "Barcelona/short.avif",
       },
-      
     ],
   }),
   getters: {
