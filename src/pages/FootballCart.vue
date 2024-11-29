@@ -50,7 +50,7 @@ export default {
          order.orders.push({id:id,img:img,team:team,type:type,quantity:quantity,auth: checker});
                  }
               if(auth.whoisLoggedIn === null){
-                alert("Sikeres rendelés");
+                alert("Successful order");
               }
               else{
                 this.$router.push("/MyOrders");

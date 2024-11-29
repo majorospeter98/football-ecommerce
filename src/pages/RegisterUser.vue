@@ -126,6 +126,7 @@ export default {
         alert("Already Registered with this email address ");
       } else {
         auth.registeredUsers.push(registeredUser);
+        alert("Successful registration!")
         this.$router.push("/login");
       }
     },

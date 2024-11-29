@@ -1,24 +1,25 @@
 <template>
   <div>
-    <header
-      id="header"
-      class="container mt-3 min-h-20 flex justify-evenly items-center p-2 bg-gradient-to-l from-darkBrownGradient to-lightBrownGradient max-md:flex-col max-md:min-h-96"
+    <header id="header"
+        class="container mt-3 min-h-20 flex flex-1 justify-evenly items-center  p-0 bg-gradient-to-l from-darkBrownGradient to-lightBrownGradient max-md:flex-col max-md:min-h-96"
     >
       <router-link to="/store">Store</router-link>
-      <router-link to="/MyOrders" v-if="isLoggedin">My Orders</router-link>
-      <span class="text-white" v-if="isLoggedin"> User: {{ getEmail }}</span>
-      <router-link :to="'/'" @click="logOut" v-if="isLoggedin"
+      <router-link to="/MyOrders" v-show="isLoggedin">My Orders</router-link>
+      <span class="text-white" v-show="isLoggedin"> User: {{ getEmail }}</span>
+      <router-link :to="'/'" @click="logOut" v-show="isLoggedin"
         >Logout</router-link
       >
-      <router-link to="/login" v-if="!isLoggedin">Login</router-link>
-      <router-link to="/register" v-if="!isLoggedin">Register</router-link>
+      <router-link to="/login" v-show="!isLoggedin">Login</router-link>
+      <router-link to="/register" v-show="!isLoggedin">Register</router-link>
       <section id="svg">
         <router-link to="/cart">
           <svg
-            class="w-8 h-8 text-white svg"
+            class="w-8 h-8 text-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
+            outline="none"
+            margin="none"
             border="none"
             stroke="none"
           >
@@ -73,3 +74,25 @@ export default {
   },
 };
 </script>
+<style scoped>
+header {
+  outline: 1px solid red;
+  display: flex;
+  justify-content: space-around; /* Vagy próbáld ki a `space-around`-ot */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem; /* Fix padding, ha szükséges */
+}
+</style>
