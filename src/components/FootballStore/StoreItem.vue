@@ -3,7 +3,7 @@
     <section class="flex flex-col justify-evenly gap-4 m-2">
       <img
         :src="require(`../../assets/Teams/${img}`)"
-        class="h-[240px] w-[260px] cursor-pointer hover:rounded-full"
+        class="h-[240px] w-[260px] cursor-pointer hover:rounded-full" :alt="team + ' ' + 'Image'"
         @click="openDetailsImg"
       />
       <p>{{ team }}</p>

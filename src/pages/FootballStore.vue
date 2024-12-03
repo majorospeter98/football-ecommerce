@@ -15,8 +15,8 @@
       </div>
       <div id="introimage">
         <img
-          class="h-[380px] w-[420px] max-md:h-[280px] max-md:w-[300px]"
-          :src="require(`../assets/Teams/Real Madrid/intro1.png`)"
+          class="h-[380px] w-[420px] max-md:h-[280px] max-md:w-[300px]" alt="Real Madrid Intro Image"
+          :src="require(`../assets/Teams/Real Madrid/intro1.jpg`)"
         />
       </div>
     </section>
