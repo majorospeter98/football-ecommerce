@@ -1,7 +1,7 @@
 Football Ecommerce
 
 About:
-You can visit football teams kits etc.
+You can visit football teams kits, shorts. After you click a selected one, you can send it to the cart, then order it. If you are logged in meantime you can also see your order under the "My orders menu".
 
 Used knowledge: Vue, Pinia, Javascript, HTML5, CSS, 
 
