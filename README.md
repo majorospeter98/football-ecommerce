@@ -1,35 +1,32 @@
-Football Ecommerce
+<h1>Football E-commerce Project with Vue, Pinia, and Tailwind</h1>
 
-About:
-You can visit football teams kits, shorts. After you click a selected one, you can send it to the cart, then order it. If you are logged in meantime you can also see your order under the "My orders menu".
+<h2>Explore, search, and purchase your favorite team's kits and shorts</h2>
+<p>In this project, you can do the following:</p>
+<ul>
+  <li>View selected kits and shorts.</li>
+  <li>Add selected items to the cart.</li>
+  <li>Buy the selected items after adding items to the cart.</li>
+  <li>Filter kits and shorts by your favorite team name.</li>
+  <li>If you place an order while logged in, you can track what and how many items you’ve purchased.</li>
+  <li>Check the number of items in your cart at any time.</li>
+</ul>
 
-Used knowledge: Vue, Pinia, Javascript, HTML5, CSS, 
+<h2> Live Demo: </h2>
+🖥️ https://footballvue.netlify.app/
 
-🖥️ Live Demo: https://footballvue.netlify.app/
-
-Run locally
-Clone the project using the following command:
-
-git clone https://github.com/majorospeter98/football-ecommerce
-
-Navigate to the project directory using the following command:
-
-cd football-ecommerce
-
-Install client dependencies and start the client using the following commands:
-
-cd client
-
-npm install
-
-npm run dev
-
-Install server dependencies, build and start the server using the following commands:
-
-cd server
-
-npm install
-
-npm run build
-
-npm start
+<h2>Setup</h2>
+<p>Clone the project using the following command: </p>
+<p> 1) git clone https://github.com/majorospeter98/football-ecommerce  </p>
+<p> 2) Navigate to the project directory using the following command:  </p>
+<p> 3) cd football-ecommerce  </p>
+<h2>Client Setup </h2>
+<p>Install client dependencies and start the client using the following commands: </p>
+ <p> 1) cd client </p>
+ <p> 2) npm install </p>
+ <p> 3) npm run dev </p>
+<h2> Server Setup </h2>
+<p>Install server dependencies, build and start the server using the following commands: </p>
+<p> 1) cd server </p>
+<p> 2) npm install </p>
+<p> 3) pm run build </p>
+<p> 4) npm start  </p>
