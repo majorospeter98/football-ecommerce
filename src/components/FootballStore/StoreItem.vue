@@ -3,11 +3,14 @@
     <section class="flex flex-col justify-evenly gap-4 m-2">
       <img
         :src="require(`../../assets/Teams/${img}`)"
-        class="h-[240px] w-[260px] cursor-pointer hover:rounded-full" :alt="team + ' ' + 'Image'"
+        class="h-[240px] w-[260px] cursor-pointer hover:rounded-full"
+        :alt="team + ' ' + 'Image'"
         @click="openDetailsImg"
       />
       <p>{{ team }}</p>
-      <router-link class="button-9" :to="openDetails">Details</router-link>
+      <router-link class="button-9" :to="openDetails">{{
+        $t("Details")
+      }}</router-link>
     </section>
   </div>
 </template>

@@ -15,7 +15,7 @@
       ></orderitem>
     </ul>
     <p v-else class="text-center text-white mt-5 text-4xl">
-      You don't have orders currently.
+      {{$t('YouDontHaveOrder')}}
     </p>
   </div>
 </template>

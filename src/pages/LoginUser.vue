@@ -6,10 +6,10 @@
       <form @submit.prevent="loginUser" class="flex flex-col">
         <p class="text-end">
           <router-link class="hover:border-b-0" :to="'/register'"
-            >Register</router-link
+            >{{$t("Register")}}</router-link
           >
         </p>
-        <h2 class="text-4xl text-center text-white">Login</h2>
+        <h2 class="text-4xl text-center text-white">{{$t("Login")}}</h2>
         <label class="text-white" for="email">Email:</label>
         <input
           class="mb-7 p-3 rounded-lg"
@@ -19,8 +19,8 @@
           v-model="email"
           required
         />
-        <label class="text-white" for="name">Password:</label>
-        <input
+        <label class="text-white" for="name">{{$t("Password")}}:</label>
+        <input autocomplete
           type="password"
           class="mb-7 p-3 rounded-lg"
           id="password"
@@ -28,18 +28,20 @@
           v-model="password"
           required
         />
-        <button class="button" type="submit">Login</button>
+        <button class="button" type="submit">{{$t("Login")}}</button>
       </form>
     </div>
   </div>
 </template>
 <script>
 import { useAuth } from "../stores/auth";
+import { useToast } from "vue-toastification";
 export default {
   data() {
     return {
       email: "",
       password: "",
+      toast: useToast()
     };
   },
   methods: {
@@ -53,10 +55,11 @@ export default {
         auth.isUserLoggedIn = true;
         auth.whoisLoggedIn = this.email;
         auth.changeIsUser(true);
-        alert("Successfully logged in");
+        this.toast.success(this.$t("LoggedIn"));
         this.$router.push("/store");
       } else {
-        alert("Wrong Email/Password");
+        this.toast.error(this.$t("WrongLogin"));
+        
       }
     },
   },

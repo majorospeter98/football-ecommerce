@@ -10,11 +10,11 @@
           />
 
           <h2 class="text-4xl">{{ selectedId.team }}</h2>
-          <h4 class="text-slate-300">{{ selectedId.type }}</h4>
+          <h4 class="text-slate-300">{{$t(selectedId.type) }}</h4>
         </div>
         <div class="max-md:m-4 flex flex-col justify-center text-center gap-4">
           <label class="text-2xl" for="quantity">
-            Quantity:
+            {{$t("Quantity")}}:
             <select
               class="text-black m-1.5"
               id="quantity"
@@ -33,17 +33,13 @@
               <option value="10">10</option>
             </select></label
           >
-
-          <p
-            @click="toggleDetail"
-            class="toggle"
-            :style="{ fontSize: '1.1rem' }"
-          >
-            Details: {{ toggleDetails ? "-" : "+" }}
-          </p>
-          <p v-if="toggleDetails">ID: {{ selectedId.id }}</p>
-          <p v-if="toggleDetails">Brand: {{ selectedId.brand }}</p>
-          <button class="button-9" @click="sentToCart">Add To Cart</button>
+               {{$t("Details")}} : 
+             <button @click="toggleDetail"
+            class="toggle hover:border-none"
+            :style="{ fontSize: '1.4rem', outline:'none', cursor:'pointer' }">  {{ toggleDetails ? "-" : "+" }} </button>
+                   <p v-if="toggleDetails">ID: {{ selectedId.id }}</p>
+          <p v-if="toggleDetails">{{$t("Brand")}}: {{ selectedId.brand }}</p>
+          <button class="button-9" @click="sentToCart">{{$t("Cart")}}</button>
         </div>
       </div>
     </section>
@@ -92,3 +88,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+button{
+  border:none;
+ 
+}
+</style>

@@ -9,7 +9,7 @@
         :src="require(`../../assets/Teams/${img}`)"
       />
       <p class="font-semibold text-3xl text-white text-center">
-        Quantity: {{ quantity }}
+        {{ $t("Quantity") }}: {{ quantity }}
       </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"

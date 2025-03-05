@@ -6,11 +6,11 @@
       <div class="flex flex-col gap-4 items-center">
         <div>
           <h1 class="text-7xl text-center font-bold max-sm:text-6xl">
-            You can buy now.
+           {{$t("Buy")}}
           </h1>
         </div>
         <h2 class="text-gray-200 text-center">
-          Get ready for the next season!
+         {{$t("Ready")}}
         </h2>
       </div>
       <div id="introimage">
@@ -22,11 +22,11 @@
     </section>
 
     <section class="container mb-5">
-      <h2 class="text-5xl font-bold text-white text-center m-4 p-4">Store</h2>
+      <h2 class="text-5xl font-bold text-white text-center m-4 p-4">{{$t("Store")}}</h2>
 
       <div class="flex justify-center h-8 items-center text-center">
         <label class="text-white" for="site-search"
-          >Search by team name:
+          >{{$t("Search")}}:
           <input
             type="search"
             id="site-search"

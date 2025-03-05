@@ -6,11 +6,11 @@
       <form @submit.prevent="submitForm" class="flex flex-col">
         <p class="login text-right">
           <router-link class="hover:border-none" :to="'/login'"
-            >Login</router-link
+            >{{$t("Login")}}</router-link
           >
         </p>
-        <h2 class="text-4xl text-center text-white mb-3">Register</h2>
-        <div :class="{ invalid: !email.isEmailIsValid }">
+        <h2 class="text-4xl text-center text-white mb-3">{{$t("Register")}}</h2>
+        <div>
           <label class="text-white mb-2" for="email">Email:</label>
           <input
             class="input"
@@ -20,12 +20,9 @@
             v-model="email.val"
             required
           />
-          <p class="text-white text-center" v-if="!email.isEmailIsValid">
-            Your email should be atleast 8 character
-          </p>
-        </div>
-        <div :class="{ invalid: !userName.isUserNameIsValid }">
-          <label class="text-white mb-2" for="userame">Username:</label>
+                </div>
+        <div>
+          <label class="text-white mb-2" for="userame">{{$t("Username")}}:</label>
           <input
             class="input"
             type="text"
@@ -34,13 +31,11 @@
             v-model="userName.val"
             required
           />
-          <p class="text-white text-center" v-if="!userName.isUserNameIsValid">
-            Your username should be atleast 8 character
-          </p>
+        
         </div>
-        <div :class="{ invalid: !password.isPasswordIsValid }">
-          <label class="text-white mb-2" for="name">Password:</label>
-          <input
+        <div>
+          <label class="text-white mb-2" for="name">{{$t("Password")}}:</label>
+          <input autocomplete
             class="input"
             type="password"
             id="name"
@@ -48,55 +43,50 @@
             v-model="password.val"
             required
           />
-          <p class="text-white text-center" v-if="!password.isPasswordIsValid">
-            Your password should be atleast 8 character
-          </p>
+          
         </div>
-        <div :class="{ invalid: !confirm.isPasswordIsConfirm }">
+        <div>
           <label class="text-white mb-2" for="passwordconf"
-            >Password Confirm:</label
+            >{{$t("PasswordConfirm")}}:</label
           >
-          <input
+          <input autocomplete
             class="input"
-            type="type"
+            type="password"
             id="passworconf"
             name="passwordconf"
             v-model="confirm.val"
             required
           />
-          <p class="text-white text-center" v-if="!confirm.isPasswordIsConfirm">
-            Your passwords doesn't match
-          </p>
+         
         </div>
-        <button class="button" type="submit">Register</button>
+        <button class="button" type="submit">{{$t("Register")}}</button>
       </form>
     </div>
   </div>
 </template>
 <script>
+import { useToast } from "vue-toastification";
 import { useAuth } from "../stores/auth";
 export default {
   data() {
     return {
+      toast: useToast(), 
       email: {
         val: "",
-        isEmailIsValid: true,
+       
         formIsValid: true,
       },
       userName: {
         val: "",
-        isUserNameIsValid: true,
-        formIsValid: true,
+               formIsValid: true,
       },
       password: {
         val: "",
-        isPasswordIsValid: true,
-        formIsValid: true,
+        
       },
       confirm: {
         val: "",
-        isPasswordIsConfirm: true,
-        formIsValid: true,
+        
       },
       formIsValid: false,
     };
@@ -106,21 +96,21 @@ export default {
       this.formIsValid = true;
 
       if (this.email.val === "" || this.email.val.length < 8) {
-        this.email.isEmailIsValid = false;
+       this.toast.error(this.$t("EmailCheck"), {timeout: 7500})
         this.formIsValid = false;
       }
       if (this.userName.val === "" || this.userName.val.length < 8) {
-        this.userName.isUserNameIsValid = false;
+       this.toast.error(this.$t("UsernameCheck"), {timeout:7500})
         this.formIsValid = false;
       }
       if (this.password.val === "" || this.password.val.length < 8) {
-        this.password.isPasswordIsValid = false;
-        this.formIsValid = false;
+        this.toast.error(this.$t("PasswordCheck"), {timeout:7500})
+             this.formIsValid = false;
       }
       if (this.password.val !== this.confirm.val) {
-        this.confirm.isPasswordIsConfirm = false;
-        this.formIsValid = false;
-      }
+          this.toast.error(this.$t("PasswordConfirmCheck"), {timeout: 7500})
+           this.formIsValid = false;
+             }
     },
     submitForm() {
       this.validateForm();
@@ -137,10 +127,12 @@ export default {
         password: this.password.val,
       };
       if (emailIsExist.length > 0) {
-        alert("Already Registered with this email address ");
+        this.toast.error(this.$t("DuplicateEmail"));
+        
       } else {
         auth.registeredUsers.push(registeredUser);
-        alert("Successful registration!");
+       
+        this.toast.success(this.$t('RegisteredUser'))
         this.$router.push("/login");
       }
     },
